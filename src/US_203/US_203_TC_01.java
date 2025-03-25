@@ -16,15 +16,19 @@ public class US_203_TC_01 extends BaseDriver {
 
       WebElement login= driver.findElement(By.className("ico-login"));
       login.click();
+    MyFunc.Bekle(2);
 
       WebElement email=driver.findElement(By.id("Email"));
       email.sendKeys("atillapractice@hotmail.com");
+    MyFunc.Bekle(2);
 
       WebElement password= driver.findElement(By.id("Password"));
       password.sendKeys("GreenCard123");
+    MyFunc.Bekle(2);
 
       WebElement button= driver.findElement(By.cssSelector("[value='Log in']"));
       button.click();
+    MyFunc.Bekle(2);
 
       WebElement logout=driver.findElement(By.cssSelector("[class='ico-logout']"));
       logout.click();
