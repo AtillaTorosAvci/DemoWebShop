@@ -6,17 +6,22 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 
 public class US_202_TC_01 extends BaseDriver {
     @Test
     public void Test1(){
         driver.get("https://demowebshop.tricentis.com/");
+        Actions actions=new Actions(driver);
 
         WebElement RegisterHomePage= driver.findElement(By.className("ico-register"));
-        RegisterHomePage.click();
+        Action act=actions.moveToElement(RegisterHomePage).click().build();
+        act.perform();
 
         WebElement GenderMale= driver.findElement(By.cssSelector("input[id='gender-male']"));
-        GenderMale.click();
+        act=actions.moveToElement(GenderMale).click().build();
+        act.perform();
 
         WebElement Firstname= driver.findElement(By.cssSelector("input[id='FirstName']"));
         Firstname.sendKeys("Nedesek");
@@ -36,7 +41,8 @@ public class US_202_TC_01 extends BaseDriver {
         MyFunc.Bekle(1);
 
         WebElement register= driver.findElement(By.xpath("//input[@id='register-button']"));
-        register.click();
+        act=actions.moveToElement(register).click().build();
+        act.perform();
         MyFunc.Bekle(2);
 
         WebElement NotificationText= driver.findElement(By.xpath("//*[text()='The specified email already exists']"));
