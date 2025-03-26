@@ -1,8 +1,11 @@
-package Utility;
+package US_205_US_209;
 
+import Utility.BaseDriver;
+import Utility.MyFunc;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class US_209_TC_02 extends BaseDriver {
 
@@ -11,8 +14,10 @@ public class US_209_TC_02 extends BaseDriver {
     public void test1() {
         driver.get("https://demowebshop.tricentis.com/");
         MyFunc.Bekle(2);
+        Actions action=new Actions(driver);
         WebElement loginanamenu = driver.findElement(By.linkText("Log in"));
-        loginanamenu.click();
+        action.click(loginanamenu).build().perform();
+
 
 
         WebElement email1 = driver.findElement(By.xpath("//input[@id='Email']"));
@@ -24,23 +29,24 @@ public class US_209_TC_02 extends BaseDriver {
         MyFunc.Bekle(1);
 
         WebElement login1 = driver.findElement(By.cssSelector("input[class='button-1 login-button']"));
-        login1.click();
+        action.click(login1).build().perform();
+
         MyFunc.Bekle(1);
 
         WebElement epostasi = driver.findElement(By.linkText("atillapractice@hotmail.com"));
-        epostasi.click();
+        action.click(epostasi).build().perform();
         MyFunc.Bekle(1);
 
         WebElement orders = driver.findElement(By.linkText("Orders"));
-        orders.click();
+        action.click(orders).build().perform();
         MyFunc.Bekle(1);
 
         WebElement details = driver.findElement(By.cssSelector("input[class=\"button-2 order-details-button\"]"));
-        details.click();
+        action.click(details).build().perform();
         MyFunc.Bekle(1);
 
         WebElement pdfindir = driver.findElement(By.linkText("PDF Invoice"));
-        pdfindir.click();
+        action.click(pdfindir).build().perform();
         MyFunc.Bekle(1);
 
 
