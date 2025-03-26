@@ -1,9 +1,12 @@
+package US_205_US_209;
+
 import Utility.BaseDriver;
 import Utility.MyFunc;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -16,12 +19,13 @@ public class US_205_TC_01 extends BaseDriver {
 
         driver.get("https://demowebshop.tricentis.com/");
         MyFunc.Bekle(2);
+        Actions action=new Actions(driver);
+
         WebElement loginanamenu = driver.findElement(By.linkText("Log in"));
-        loginanamenu.click();
+        action.click(loginanamenu).build().perform();
 
 
         WebElement email1 = driver.findElement(By.xpath("//input[@id='Email']"));
-
         email1.sendKeys(" ");
         MyFunc.Bekle(1);
 
@@ -30,7 +34,7 @@ public class US_205_TC_01 extends BaseDriver {
         MyFunc.Bekle(1);
 
         WebElement login1 = driver.findElement(By.cssSelector("input[class='button-1 login-button']"));
-        login1.click();
+        action.click(login1).click().build().perform();
         MyFunc.Bekle(1);
 
 
@@ -43,7 +47,7 @@ public class US_205_TC_01 extends BaseDriver {
         MyFunc.Bekle(1);
 
         WebElement login2 = driver.findElement(By.cssSelector("input[class='button-1 login-button']"));
-        login2.click();
+        action.click(login2).click().build().perform();
         MyFunc.Bekle(1);
 
         email2.clear();
@@ -59,7 +63,7 @@ public class US_205_TC_01 extends BaseDriver {
         MyFunc.Bekle(1);
 
         WebElement login3 = driver.findElement(By.cssSelector("input[class='button-1 login-button']"));
-        login3.click();
+        action.click(login3).click().build().perform();
         MyFunc.Bekle(1);
 
         WebElement email4 = driver.findElement(By.xpath("//input[@id='Email']"));
@@ -71,9 +75,10 @@ public class US_205_TC_01 extends BaseDriver {
         MyFunc.Bekle(1);
 
         WebElement login4 = driver.findElement(By.cssSelector("input[class='button-1 login-button']"));
-        login4.click();
+        action.click(login4).click().build().perform();
 
         System.out.println("password4 = " + password4.getAttribute("value"));
+
 
         BekleKapat();
 
