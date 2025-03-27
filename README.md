@@ -24,17 +24,29 @@ The following user stories are automated:
 
 ## 📂 Project Structure
 ```
-📦 SeleniumDemoWebShop
+📦 DemoWebShop
  ┣ 📂 src
- ┃ ┣ 📂 testCases
- ┃ ┃ ┣ 📝 RegisterTest.java
- ┃ ┃ ┣ 📝 LoginTest.java
- ┃ ┃ ┣ 📝 OrderTest.java
- ┃ ┃ ┗ 📝 NegativeScenariosTest.java
- ┃ ┣ 📂 utilities
- ┃ ┃ ┣ 📝 WebDriverManager.java
- ┃ ┃ ┣ 📝 ConfigReader.java
- ┃ ┃ ┗ 📝 TestBase.java
+ ┃ ┣ 📂 US_201
+ ┃ ┃ ┣ 📝 US_201_TC_01.java
+ ┃ ┣ 📂US_202
+ ┃ ┃ ┣ 📝US_202_TC_01.java
+ ┃ ┣ 📂US_203
+ ┃ ┃ ┣ 📝US_203_TC_01.java
+ ┃ ┣ 📂US_204
+ ┃ ┃ ┣ 📝US_204_TC_01.java
+ ┃ ┣ 📂US_205
+ ┃ ┃ ┣ 📝US_205_TC_01.java
+ ┃ ┣ 📂US_206
+ ┃ ┃ ┣ 📝US_206_TC_01.java
+ ┃ ┣ 📂US_207
+ ┃ ┃ ┣ 📝US_207_TC_01.java
+ ┃ ┣ 📂US_208
+ ┃ ┃ ┣ 📝US_208_TC_01.java
+ ┃ ┣ 📂US_209
+ ┃ ┃ ┣ 📝US_209_TC_01.java
+ ┃ ┣ 📂 Utility
+ ┃ ┃ ┣ 📝 BaseDriver.java
+ ┃ ┃ ┗ 📝 MyFunc.java
  ┣ 📜 pom.xml (Maven dependencies)
  ┣ 📜 junit.xml (JUnit Configuration)
  ┗ 📜 README.md (Project Documentation)
@@ -43,7 +55,7 @@ The following user stories are automated:
 ## 🚀 Installation & Setup
 1. **Clone the Repository:**
    ```sh
-   git clone https://github.com/AtillaTorosAvci/DemoWebShop.git
+   git clone **(https://github.com/AtillaTorosAvci/DemoWebShop.git)**
    ```
 2. **Open the Project in IntelliJ IDEA.**
 3. **Install Dependencies:**
