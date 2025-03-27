@@ -13,12 +13,14 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
-public class US_206_TC_601 extends BaseDriver {
+public class US_206_TC_01 extends BaseDriver {
 
     @Test
     public void Test601() {
-        //Bu testin düzgün çalışabilmesi için sepette sadece laptop harici ürün olmamalı ve kayıtlı bir adres olmamalı.
+        //Bu testin düzgün çalışabilmesi için sepette laptop harici ürün olmamalı.
+        //Adres silme adımında upload süresi çok uzun sürebilir ve hata alınabilir bu site ile alakalı bir problem.
 
         driver.get("https://demowebshop.tricentis.com/");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -36,6 +38,24 @@ public class US_206_TC_601 extends BaseDriver {
 
         WebElement logIn2 = driver.findElement(By.cssSelector("[value='Log in']"));
         logIn2.click();
+
+        WebElement myAccnt=driver.findElement(By.xpath("(//*[@class='account'])[1]"));
+        myAccnt.click();
+
+        WebElement Addresses =driver.findElement(By.linkText("Addresses"));
+        Addresses.click();
+
+        //Kayıtlı adres varsa sil.
+        List<WebElement> delete=driver.findElements(By.cssSelector("[class='button-2 delete-address-button']"));
+        if (delete.size()>0) {
+            delete.get(0).click();
+
+            MyFunc.Bekle(1);
+            driver.switchTo().alert().accept();
+        }
+
+        WebElement homepage=driver.findElement(By.cssSelector("[href='/']"));
+        homepage.click();
 
         WebElement laptop = driver.findElement(By.xpath("(//*[@class='button-2 product-box-add-to-cart-button'])[2]"));
         js.executeScript("arguments[0].scrollIntoView(true);", laptop);
