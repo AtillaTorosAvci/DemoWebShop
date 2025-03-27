@@ -24,7 +24,7 @@ The following user stories are automated:
 
 ## 📂 Project Structure
 ```
-📦 SeleniumDemoWebShop
+📦 DemoWebShop
  ┣ 📂 src
  ┃ ┣ 📂 US_201
  ┃ ┃ ┣ 📝 US_201_TC_01.java
