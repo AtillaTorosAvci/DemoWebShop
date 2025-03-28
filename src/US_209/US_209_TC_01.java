@@ -1,4 +1,4 @@
-package US_205_US_209;
+package US_209;
 
 import Utility.BaseDriver;
 import Utility.MyFunc;
@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class US_209_TC_02 extends BaseDriver {
+public class US_209_TC_01 extends BaseDriver {
 
     @Test
 

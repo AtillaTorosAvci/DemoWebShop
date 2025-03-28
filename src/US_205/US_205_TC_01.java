@@ -1,15 +1,11 @@
-package US_205_US_209;
+package US_205;
 
 import Utility.BaseDriver;
 import Utility.MyFunc;
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class US_205_TC_01 extends BaseDriver {
 
